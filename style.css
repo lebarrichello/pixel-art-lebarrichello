@@ -1,8 +1,8 @@
-.pen { 
+.color{ 
     display:inline-block;
     width:40px;
     height:40px;
-    border :2px solid black;
+    border :1px solid black;
 
 }
 
@@ -10,7 +10,7 @@
     display:table;
     border-spacing: 1px;
     background-color: black;
-    border:5px solid black;
+    border:1px solid black;
 }
 
 .row{
