@@ -1,8 +1,37 @@
+
+@import url('https://fonts.cdnfonts.com/css/common-pixel');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+header{
+    top: 0;
+    padding: 0px;
+    background: black;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+h3{
+    font-family: 'Common Pixel', sans-serif;
+    color: whitesmoke;
+    font-size: 50px;
+    margin-top:50px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 16px;
+
+}
 .color{ 
     display:inline-block;
     width:40px;
     height:40px;
     border :1px solid black;
+   
 
 }
 
@@ -11,6 +40,7 @@
     border-spacing: 1px;
     background-color: black;
     border:1px solid black;
+    
 }
 
 .row{
@@ -22,4 +52,36 @@ display: table-row;
     background-color: white;
     width: 40px;
     height: 40px;
+    border:1px solid black;
+
 }
+
+#button-random-color{
+   
+        background-color:rebeccapurple;
+        color: white;
+        padding: 5px;
+        padding-top: 5px;
+        margin-top: 10px;
+        font-family: inherit;
+        font-size: 1.2rem;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        border: none;
+        transition: transform 0.1s linear;
+    }
+     #button-random-color:active {
+        transform: translate(1px, 1px);
+    } 
+
+    footer{
+        margin-top: 130px;
+        
+        padding: 24px;
+        background: black;
+        color:whitesmoke;
+        text-align: center;
+        font-size: 12px;  
+    }
+
+   
