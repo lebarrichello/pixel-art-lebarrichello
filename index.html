@@ -7,60 +7,72 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
-   
 </head>
-<body>
-    
-    <header><h3>Pixel Art</h3></header>
-    <h1 id="title"> Paleta de Cores</h1>
 
-<div id="color-palette">
-    <div class="color" style="background-color:black" onclick="setPenColour(this)"></div>
-    <div class="color" onclick="setPenColour(this)"> </div>
-    <div class="color" onclick="setPenColour(this)"> </div>
-    <div class="color" onclick="setPenColour(this)"> </div>
-  
+<header>  
+    <h3>Pixel Art</h3>
+    <h1 id="title">Paleta de Cores</h1>
+    <hr>
+</header>
+
+<body>  
+     <div id="color-palette">
+        <div class="color" style="background-color:black" onclick="setPenColour(this)"></div>
+        <div class="color" onclick="setPenColour(this)"> </div>
+        <div class="color" onclick="setPenColour(this)"> </div>
+        <div class="color" onclick="setPenColour(this)"> </div> 
+     </div>
+
+     
+<div id="funcoes">
+<input class="btn" id="board-size" type="number" max="50" min="1" placeholder="TAM.DO QUADRO"> 
+<button class="btn" id="generate-board" onclick="generateBoard()">VQV</button>
+<button class="btn" id ="clear-board" onclick="btnLimpaCor()">Limpar</button>
+<button class ="btn" id ="button-random-color" onclick="btnGeraCor()">Cores aleatórias</button>
 </div>
 
-<div id="art">
-    <div class="row">
+ <div class="quadro" id="pixel-board">
+    <div class="linha">
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div> 
     </div>
-    <div class="row">
+    <div class="linha">
+         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div> 
     </div>
-    <div class="row">
+    <div class="linha">
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div> 
+        </div> 
+    <div class="linha">
+       <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
         <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+   </div>
+    <div class="linha"> 
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div>
+        <div class="pixel" onclick="setPixelColour(this)"></div> 
     </div>
-    <div class="row">
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-        <div class="pixel" onclick="setPixelColour(this)"></div>
-    </div>
-</div>
+</div> 
 
 
+<footer>Projeto Arte com Pixels - Leticia</footer>
 
-<button id ="button-random-color" onclick="btnGeraCor()">Cores aleatórias</button>
-<footer>PROJETO PIXEL ART - LETICIA BARRICHELLO </footer>
 <script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>

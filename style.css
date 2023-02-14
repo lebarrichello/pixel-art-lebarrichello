@@ -1,50 +1,127 @@
-
 @import url('https://fonts.cdnfonts.com/css/common-pixel');
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
-header{
-    top: 0;
-    padding: 0px;
-    background: black;
-    box-sizing: border-box;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+{
+    margin:0 ;
+    padding:0 ;
 }
 
 h3{
     font-family: 'Common Pixel', sans-serif;
-    color: whitesmoke;
+    color: black;
     font-size: 50px;
     margin-top:50px;
     text-align: center;
 }
 
 h1{
-    text-align: center;
-    font-family: 'Major Mono Display', monospace;
-    font-size: 16px;
-
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    margin: 0;
+    padding: 8px 10px;
+    border: 2px solid;
+    transform:translateX(-50%);
+    font-size:12px;
+    font-weight:500;
+    text-align:center;
+    text-transform:uppercase;
+    color:rgb(92, 92, 92) ;
 }
-.color{ 
-    display:inline-block;
+
+hr{
+    width: 20%;  
+}
+
+body{
+    background-color:#FFFBF5;
+    justify-content: center;
+    align-items: center;
+}
+
+.color{
+    display:inline-block; 
     width:40px;
     height:40px;
     border :1px solid black;
-   
-
+    cursor: url(./cursor.png), auto; 
 }
 
-#art{
+#color-palette{
+    text-align: center;
+}
+
+#funcoes{
+    text-align: center;
+}
+
+.btn{
+    background-color:#FFFBF5;
+    color:rgb(92, 92, 92) ;
+    border: 2px solid;
+    font-size:12px;
+    font-weight:500;
+    text-transform:uppercase;
+    padding: 7px 12px;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 120px; 
+}
+
+#generate-board:hover{
+    background-color: black;
+    color: white;
+}
+
+#clear-board:hover{
+    background-color: black;
+    color: white;
+}
+
+#button-random-color:hover{
+    color: white;
+    background-image:     linear-gradient(
+      to right, 
+      #E7484F,
+      #E7484F 16.65%,
+      #F68B1D 16.65%,
+      #F68B1D 33.3%,
+      #FCED00 33.3%,
+      #FCED00 49.95%,
+      #009E4F 49.95%,
+      #009E4F 66.6%,
+      #00AAC3 66.6%,
+      #00AAC3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #E7484F 100%
+    );
+  animation:slidebg 10s linear infinite;
+}
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+}
+
+#pixel-board{
     display:table;
     border-spacing: 1px;
     background-color: black;
     border:1px solid black;
-    
+    cursor: url(./cursor.png), auto;
+
 }
 
-.row{
-display: table-row;
+.quadro{
+margin-left: 43%;
+
+
+}
+.linha{
+    display: table-row;
 }
 
 .pixel{
@@ -53,35 +130,16 @@ display: table-row;
     width: 40px;
     height: 40px;
     border:1px solid black;
-
 }
 
-#button-random-color{
-   
-        background-color:rebeccapurple;
-        color: white;
-        padding: 5px;
-        padding-top: 5px;
-        margin-top: 10px;
-        font-family: inherit;
-        font-size: 1.2rem;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        border: none;
-        transition: transform 0.1s linear;
-    }
-     #button-random-color:active {
-        transform: translate(1px, 1px);
-    } 
-
-    footer{
-        margin-top: 130px;
-        
-        padding: 24px;
-        background: black;
-        color:whitesmoke;
-        text-align: center;
-        font-size: 12px;  
-    }
-
-   
+footer{
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(92, 92, 92) ;
+    text-transform:uppercase;
+    text-align: center;
+    border-width: medium;
+    border-style: solid;
+    width: 98%;
+    position: absolute;
+    bottom: 5px;
+}
