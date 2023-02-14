@@ -46,7 +46,10 @@ body{
     border :1px solid black;
     cursor: url(./cursor.png), auto; 
 }
+.color:hover{
+    border :5px solid black;
 
+}
 #color-palette{
     text-align: center;
 }
@@ -56,6 +59,21 @@ body{
 }
 
 .btn{
+    background-color:#FFFBF5;
+    color:rgb(92, 92, 92) ;
+    border: 2px solid;
+    font-size:12px;
+    font-weight:500;
+    text-transform:uppercase;
+    padding: 7px 12px;
+    margin: 6px 0;
+    margin-right: 12px;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 120px; 
+}
+
+#board-size{
     background-color:#FFFBF5;
     color:rgb(92, 92, 92) ;
     border: 2px solid;
@@ -112,12 +130,10 @@ body{
     background-color: black;
     border:1px solid black;
     cursor: url(./cursor.png), auto;
-
 }
 
 .quadro{
 margin-left: 43%;
-
 
 }
 .linha{
