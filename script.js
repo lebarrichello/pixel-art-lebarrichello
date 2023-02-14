@@ -2,8 +2,13 @@
  let penColour = 'black';
 
 function setPenColour(pen) {
+let divSelected = document.querySelector('.selected');
   penColour = pen.style.backgroundColor;
- 
+  if(divSelected != pen){
+    divSelected.classList.remove('selected'); 
+    pen.classList.add('selected')
+    
+  }
 }
 
 function setPixelColour(pixel) {
@@ -94,16 +99,8 @@ const salvarDesenho = () => {
   }
 }
 
-
-/* const salvarPaleta = () => {
-    const paleta = JSON.parse(localStorage.getItem('colorPalette'));
-    if (paleta === null) {
-        return;
-    }
-} */
-
 window.onload = () => {
   salvarDesenho();
   iniciaCor();
- /*  salvarPaleta(); */
+
 };
