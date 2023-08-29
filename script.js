@@ -120,8 +120,10 @@ function limitaQuadro() {
   } else if (tamanhoQuadro > 50) {
     tamanhoQuadro = 50;
   }
-  document.querySelector('#board-size').value = tamanhoQuadro; // Atualiza o valor do input
+  document.querySelector('#board-size').value = tamanhoQuadro;
 }
+
+
 
 window.onload = () => {
   salvarDesenho();
