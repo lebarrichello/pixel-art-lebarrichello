@@ -3,7 +3,7 @@ let penColour = 'black';
 function setPenColour(pen) {
   const divSelected = document.querySelector('.selected');
   penColour = pen.style.backgroundColor;
-  if (divSelected != pen) {
+  if (divSelected !== pen) {
     divSelected.classList.remove('selected');
     pen.classList.add('selected');
   }
@@ -20,25 +20,22 @@ function coresAleatorias() {
 
 function iniciaCor() {
   const cores = document.querySelectorAll('.color');
-  colorPalette = JSON.parse(localStorage.getItem('colorPalette'));
+  let colorPalette = JSON.parse(localStorage.getItem('colorPalette'));
   const novas_cores = [];
 
   if (colorPalette === null) {
     cores.forEach((e) => {
-      if (e.style.backgroundColor === '#FFFFFF') {
-        const novaCor = coresAleatorias();
-        e.style.backgroundColor = novaCor;
-      }
-      if ((e.style.backgroundColor === e.style.backgroundColor) && (e.style.backgroundColor != 'black')) {
+      if (e.style.backgroundColor === 'rgb(255, 255, 255)' || e.style.backgroundColor === '') {
         const novaCor = coresAleatorias();
         e.style.backgroundColor = novaCor;
         novas_cores.push(novaCor);
+      } else {
+        novas_cores.push(e.style.backgroundColor);
       }
     });
     localStorage.setItem('colorPalette', JSON.stringify(novas_cores));
   } else {
-    lista_sem_black = Array.from(cores).filter((e) => e.style.backgroundColor != 'black');
-    lista_sem_black.forEach((e, i) => {
+    cores.forEach((e, i) => {
       e.style.backgroundColor = colorPalette[i];
     });
   }
@@ -48,19 +45,15 @@ function btnGeraCor() {
   const cores = document.querySelectorAll('.color');
   const novas_cores = [];
   cores.forEach((e) => {
-    if (e.style.backgroundColor === '#FFFFFF') {
+    if (e.style.backgroundColor === 'rgb(255, 255, 255)' || e.style.backgroundColor === '') {
       const novaCor = coresAleatorias();
       e.style.backgroundColor = novaCor;
       novas_cores.push(novaCor);
-    }
-    if ((e.style.backgroundColor === e.style.backgroundColor) && (e.style.backgroundColor != 'black')) {
-      const novaCor = coresAleatorias();
-      e.style.backgroundColor = novaCor;
-      novas_cores.push(novaCor);
+    } else {
+      novas_cores.push(e.style.backgroundColor);
     }
   });
   localStorage.setItem('colorPalette', JSON.stringify(novas_cores));
-  console.log(localStorage.getItem('colorPalette'));
 }
 
 function btnLimpaCor() {
@@ -74,13 +67,11 @@ function btnLimpaCor() {
 const pixels = document.querySelectorAll('.pixel');
 document.addEventListener('click', (evento) => {
   const corPixel = [];
-  for (let i = 0; i < pixels.length; i += 1) {
-    if (evento.target.classList.contains('pixel')) {
-      corPixel.push(pixels[i].style.backgroundColor);
-    } else {
-      return corPixel;
+  pixels.forEach((pixel) => {
+    if (evento.target === pixel) {
+      corPixel.push(pixel.style.backgroundColor);
     }
-  }
+  });
   localStorage.setItem('pixelBoard', JSON.stringify(corPixel));
 });
 
@@ -89,30 +80,52 @@ const salvarDesenho = () => {
   if (desenho === null) {
     return;
   }
-  const pixelQuadro = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixelQuadro[i].style.backgroundColor = desenho[i];
-  }
+  pixels.forEach((pixel, i) => {
+    pixel.style.backgroundColor = desenho[i];
+  });
 };
 
-// eslint-disable-next-line no-unused-vars
 function generateBoard() {
-  const tamanhoQuadro = document.querySelector('#board-size').value;
-  if (tamanhoQuadro === '') {
-    alert('Board inválido!');
+  const tamanhoQuadro = parseInt(document.querySelector('#board-size').value);
+
+  if (isNaN(tamanhoQuadro) || tamanhoQuadro < 1 || tamanhoQuadro > 50) {
+    alert('Por favor, insira um tamanho de quadro válido entre 1 e 50.');
+    return;
   }
-};
+
+  const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = '';
+
+  for (let i = 0; i < tamanhoQuadro; i++) {
+    const linha = document.createElement('div');
+    linha.classList.add('linha');
+
+    for (let j = 0; j < tamanhoQuadro; j++) {
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      pixel.addEventListener('click', function() {
+        setPixelColour(this);
+      });
+      linha.appendChild(pixel);
+    }
+
+    pixelBoard.appendChild(linha);
+  }
+}
 
 function limitaQuadro() {
-  let tamQuadro = document.querySelector('#board-size').value;
-  if (tamQuadro  < 5) {
-    tamQuadro  = 5;
-  } else if (tamQuadro  > 50) {
-    tamQuadro  = 50;
+  let tamanhoQuadro = parseInt(document.querySelector('#board-size').value);
+  if (tamanhoQuadro < 5) {
+    tamanhoQuadro = 5;
+  } else if (tamanhoQuadro > 50) {
+    tamanhoQuadro = 50;
   }
-};
+  document.querySelector('#board-size').value = tamanhoQuadro; // Atualiza o valor do input
+}
 
 window.onload = () => {
   salvarDesenho();
   iniciaCor();
 };
+
+
