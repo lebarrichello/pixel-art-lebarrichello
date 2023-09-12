@@ -2,11 +2,23 @@
 
 Projeto desenvolvido no módulo de Fundamentos do curso de desenvolvimento web da Trybe
 
+![Captura de tela de 2023-09-12 15-07-23](https://github.com/lebarrichello/pixel-art-lebarrichello/assets/42211040/f6d64649-78c6-4e97-bdd6-f9d0b37b18b9)
+
+
 <p>Acesse o projeto em produção <a href="https://pixel-art-lebarrichello.vercel.app/" target="_blank">clicando aqui</a></p>
 
 ## 🎯 Objetivo
 
  Implementar um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e poderá pintar o que quiser em um quadro branco.
+
+ <details>
+  <summary><strong>:construction: Funcionalidades e melhorias a serem implementadas futuramente: </strong></summary><br />
+
+ - [x] Responsividade e melhorias no CSS da pagina
+ - [x] Arrumar funcao do botao de gerar cores aleatorias
+ 
+</details>
+
 
 ## 📝 Habilidades adquiridas
 
@@ -44,14 +56,6 @@ Projeto desenvolvido no módulo de Fundamentos do curso de desenvolvimento web d
  - [x] Crie uma função que limite o tamanho mínimo e máximo do quadro de pixels.
  - [x] Crie uma função para manter o tamanho novo do board ao recarregar a página.
 </details>
-
-<details>
-  <summary><strong>:construction: Funcionalidades e melhorias a serem implementadas futuramente: </strong></summary><br />
-
- - [x] Responsividade e melhorias no CSS da pagina 
- 
-</details>
-
 
  
  
